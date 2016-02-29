@@ -11,7 +11,7 @@
 @interface NSDate (WHDateTools)
 
 // 日期格式
-@property (nonatomic, strong) NSString *dateFormater;
+//@property (nonatomic, strong) NSString *dateFormater;
 
 // 用来获取年月日,时分秒,和星期
 @property (nonatomic, readonly) NSInteger year;
@@ -52,4 +52,12 @@
 // NSString 类型转换成NSDate类型
 - (NSDate *)dateWithFormater:(NSString *)formater;
 
+// 将字符串类型的时间戳转换成指定日期格式的日期字符串
+- (NSString *)dateStringFromTimestampWithFormater:(NSString *)formater;
+
 @end
+
+
+
+
+

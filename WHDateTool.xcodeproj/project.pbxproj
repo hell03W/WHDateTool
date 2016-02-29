@@ -15,6 +15,7 @@
 		E132E6741C6101AB00244E55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E132E6721C6101AB00244E55 /* LaunchScreen.storyboard */; };
 		E132E67F1C6101AB00244E55 /* WHDateToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E132E67E1C6101AB00244E55 /* WHDateToolTests.m */; };
 		E132E68A1C6101AB00244E55 /* WHDateToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E132E6891C6101AB00244E55 /* WHDateToolUITests.m */; };
+		E17EFFEB1C83E9F500008869 /* NSDate+WHDateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EFFEA1C83E9F500008869 /* NSDate+WHDateTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E132E6851C6101AB00244E55 /* WHDateToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WHDateToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E132E6891C6101AB00244E55 /* WHDateToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHDateToolUITests.m; sourceTree = "<group>"; };
 		E132E68B1C6101AB00244E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E17EFFE91C83E9F500008869 /* NSDate+WHDateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WHDateTools.h"; sourceTree = "<group>"; };
+		E17EFFEA1C83E9F500008869 /* NSDate+WHDateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WHDateTools.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		E132E6631C6101AB00244E55 /* WHDateTool */ = {
 			isa = PBXGroup;
 			children = (
+				E17EFFE81C83E9F500008869 /* WHDateTool */,
 				E132E6671C6101AB00244E55 /* AppDelegate.h */,
 				E132E6681C6101AB00244E55 /* AppDelegate.m */,
 				E132E66A1C6101AB00244E55 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				E132E68B1C6101AB00244E55 /* Info.plist */,
 			);
 			path = WHDateToolUITests;
+			sourceTree = "<group>";
+		};
+		E17EFFE81C83E9F500008869 /* WHDateTool */ = {
+			isa = PBXGroup;
+			children = (
+				E17EFFE91C83E9F500008869 /* NSDate+WHDateTools.h */,
+				E17EFFEA1C83E9F500008869 /* NSDate+WHDateTools.m */,
+			);
+			path = WHDateTool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +289,7 @@
 				E132E66C1C6101AB00244E55 /* ViewController.m in Sources */,
 				E132E6691C6101AB00244E55 /* AppDelegate.m in Sources */,
 				E132E6661C6101AB00244E55 /* main.m in Sources */,
+				E17EFFEB1C83E9F500008869 /* NSDate+WHDateTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +513,7 @@
 				E132E6901C6101AB00244E55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E132E6911C6101AB00244E55 /* Build configuration list for PBXNativeTarget "WHDateToolTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +522,7 @@
 				E132E6931C6101AB00244E55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E132E6941C6101AB00244E55 /* Build configuration list for PBXNativeTarget "WHDateToolUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +531,7 @@
 				E132E6961C6101AB00244E55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

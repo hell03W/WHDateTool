@@ -147,36 +147,21 @@
 // 返回指定格式的 日期时间字符串 如: 2015-07-29 12:23:34
 - (NSString *)fullDateString
 {
-    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-    if (!self.dateFormater) {
-        dateFormater.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    }else{
-        dateFormater.dateFormat = self.dateFormater;
-    }
-    
-    NSString *dateString = [dateFormater stringFromDate:self];
-    
+    NSString *dateString = [self stringWithFormat:@"yyyy-MM-dd HH:mm:ss"];
     return dateString;
 }
 
 // 返回日期 如: 2013-03-23
 - (NSString *)dateString
 {
-    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-    dateFormater.dateFormat = @"yyyy-MM-dd";
-    
-    NSString *dateString = [dateFormater stringFromDate:self];
-    
+    NSString *dateString = [self stringWithFormat:@"yyyy-MM-dd"];
     return dateString;
 }
 
 // 返回时间 如: 12:23:23
 - (NSString *)timeString
 {
-    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-    dateFormater.dateFormat = @"HH:mm:ss";
-    NSString *dateString = [dateFormater stringFromDate:self];
-    
+    NSString *dateString = [self stringWithFormat:@"HH:mm:ss"];
     return dateString;
 }
 
@@ -194,18 +179,27 @@
     return [formatter dateFromString:formater];
 }
 
+- (NSString *)dateStringFromTimestampWithFormater:(NSString *)formater
+{
+    NSDate *date = [self dateWithFormater:formater];
+    NSString *dateString = [date stringWithFormat:formater];
+    return dateString;
+}
+
 @end
 
 
 
 
-/*year;
+/*
+ year;
  month;
  day;
  hour;
  minute;
  second;
- weekDay;*/
+ weekDay;
+ */
 
 
 

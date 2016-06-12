@@ -13,39 +13,33 @@
 @implementation NSDate (WHDateTools)
 
 #pragma mark - 获取 一个日期所属的年月日时分秒,日期,时间等属性
-- (NSInteger)year
-{
+- (NSInteger)year {
     return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] year];
 }
 
-- (NSInteger)month
-{
-    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] month];
+- (NSInteger)month {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:self] month];
 }
 
-- (NSInteger)day
-{
-    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] day];
+- (NSInteger)day {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:self] day];
 }
 
-- (NSInteger)hour
-{
-    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] hour];
+- (NSInteger)hour {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitHour fromDate:self] hour];
 }
 
-- (NSInteger)minute
-{
-    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] minute];
+- (NSInteger)minute {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitMinute fromDate:self] minute];
 }
 
-- (NSInteger)second
-{
-    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] second];
+- (NSInteger)second {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitSecond fromDate:self] second];
 }
 
 - (NSInteger)weekDay
 {
-    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] weekday];
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitWeekday fromDate:self] weekday];
 }
 
 
@@ -166,6 +160,23 @@
 }
 
 
+// 周日: 1,  weekday范围 1--7
++ (NSInteger)countWeekdayFrom:(NSDate *)startDate to:(NSDate *)endDate weekDay:(NSInteger)weekday {
+    
+    NSString *formater = @"yyyy-MM-dd";
+    startDate = [[startDate stringWithFormat:formater] dateWithFormater:formater];
+    endDate = [[endDate stringWithFormat:formater] dateWithFormater:formater];
+    double timeInterval = [endDate timeIntervalSince1970] - [startDate timeIntervalSince1970];
+    if (timeInterval <= 0) return 0;
+    
+    NSInteger dayInterval = timeInterval / (60.f * 60.f * 24.f) + 1;
+    NSInteger startWeekday = [startDate weekDay];
+    NSInteger frontDays = weekday - startWeekday;
+    frontDays = (frontDays < 0) ? frontDays + 7 : frontDays;
+
+    return (dayInterval - frontDays) / 7 + ((dayInterval - frontDays) % 7 > 0);
+}
+
 @end
 
 
@@ -176,7 +187,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = formater;
     
-    return [formatter dateFromString:formater];
+    return [formatter dateFromString:self];
 }
 
 - (NSString *)dateStringFromTimestampWithFormater:(NSString *)formater

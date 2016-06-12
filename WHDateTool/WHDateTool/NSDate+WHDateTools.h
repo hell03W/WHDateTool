@@ -22,6 +22,15 @@
 @property (nonatomic, readonly) NSInteger second;
 @property (nonatomic, readonly) NSInteger weekDay;
 
+///是否是平年
+- (BOOL)isLeapYear;
+
+///日期是不是今天
+- (BOOL)isToday;
+
+///判断时间段内有多少个星期几 startDate: 开始日期, endDate: 结束日期, weekday: 星期几, 开始日期结束日期可以是string类型,也可以是date类型
++ (NSInteger)countWeekdayFrom:(NSDate *)startDate to:(NSDate *)endDate weekDay:(NSInteger)weekday;
+
 
 
 // 一个NSDate类型数据,加上一个时间段

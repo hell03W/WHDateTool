@@ -3,7 +3,7 @@
 //  WHDateTool
 //
 //  Created by Walden on 16/2/2.
-//  Copyright © 2016年 Walden. All rights reserved.
+//  Copyright © 2016年 Walden All rights reserved.
 //
 
 #import "ViewController.h"
